@@ -1,0 +1,47 @@
+<div class="container">
+<div class="">
+  <h5 class="bg-light d-inline-flex mt-3 px-4"><span><%= @guest.full_name %></span>さんの会員詳細</h5>
+  <div class="field mt-4 row ml-2 mb-3 border-bottom">
+    <label class="col-3 ">会員ID</label>
+    <%= @guest.id  %>
+  </div>
+  <div class="field row ml-2 mb-3 border-bottom">
+    <label class="col-3">氏名</label>
+    <div><%= @guest.first_name %> <%= @guest.last_name %></div>
+  </div>
+  <div class="field row ml-2 mb-3 border-bottom">
+    <label class="col-3">フリガナ</label>
+    <%= @guest.first_name_kana %> <%= @guest.last_name_kana %>
+  </div>
+  <div class="field row ml-2 mb-3 border-bottom">
+    <label class="col-3">郵便番号</label>
+    <%= @guest.postal_code %>
+  </div>
+  <div class="field row ml-2 mb-3 border-bottom">
+    <label class="col-3">住所</label>
+    <%= @guest.address %>
+  </div>
+  <div class="field row ml-2 mb-3 border-bottom">
+    <label class="col-3">電話番号</label>
+    <%= @guest.telephone_number %>
+  </div>
+  <div class="field row ml-2 mb-3 border-bottom">
+    <label class="col-3">メールアドレス</label>
+    <%= @guest.email %>
+  </div>
+  <div class="field row ml-2 mb-3">
+    <label class="col-3">会員ステータス</label>
+    <% @guest.is_deleted  %>
+     <% if @guest.is_deleted == false %>
+       <strong class="text-success">有効</strong>
+     <% else %>
+       <strong class="text-black-50">退会</strong>
+     <% end %>
+  </div>
+  <div class="row ml-5">
+    <div class="col-2 ml-4"></div>
+  <%= link_to "編集する",edit_admin_customer_path(@guest.id),class:"btn btn-success ml-3 mr-4" %>
+  <%= link_to "注文履歴一覧に戻る",'/admin',class:"btn btn-info ml-4 " %>
+  </div>
+</div>
+</div>

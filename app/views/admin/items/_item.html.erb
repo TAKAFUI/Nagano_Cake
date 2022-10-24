@@ -1,0 +1,21 @@
+
+
+<table>
+        <tr><th>商品画像</th>
+            <td><%= f.file_field:image,placeholder:"ファイルを選択",accept:"image/*" , class:"ml-4 mb-3"%></td></tr>
+        <tr><th>商品名</th>
+            <td><%= f.text_field:name,class:"  col-10 mb-3 ml-4"%></td></tr>
+        <tr><th class="align-top">商品説明</th>
+            <td><%= f.text_area:introduction, size: "30×10",class:"col-10 mb-3 ml-4" %></td></tr>
+        <tr class="mb-3"><th class="mb-3 mr-4">ジャンル</th>
+            <td class="mb-3 ml-4"><%= f.select :genre_id,options_from_collection_for_select(Genre.all,:id,:name),{},{class: 'col-10 mb-3 ml-4 '} %></td></tr>
+        <tr><th>税抜価格</th>
+            <td><%= f.text_field :price,class:" col-10 mb-3 ml-4" %>円</td></tr>
+            <tr><th>販売ステータス</th>
+            <td><%= f.radio_button :is_active, "販売中" %>
+      <%= f.label :is_active, "販売中",class:"mr-3" %>
+      <%= f.radio_button :is_active, "販売停止中" %>
+      <%= f.label :is_active, "販売停止中" %></td></tr>
+        <tr><th></th>
+            <td><%= f.submit "変更を保存",class:"btn btn-success mx-auto" %></td></tr>
+    </table>

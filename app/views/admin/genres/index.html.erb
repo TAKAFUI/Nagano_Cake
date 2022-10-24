@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="">
+    <div class="">
+     <h5 class="d-inline-flex bg-light mt-5 mx-5 px-3">ジャンル一覧・追加</h5>
+
+     <%= form_with model:@genre,url:'/admin/genres',method: :post do |f| %>
+     <div class="row">
+      <div class="field  mt-5 col-2">
+       <label class="genre  ">ジャンル名</label>
+      </div>
+       <div class="col-5 mt-5">
+       <%= f.text_field:name, placeholder:"ジャンル名",class:"  mr-5" %>
+     <%= f.submit '新規登録',class:"btn btn-success px-4 btn-sm" %>
+     <% end %>
+     </div>
+    </div>
+    <div class="row">
+      <div class="col-5">
+      <table class="w-100">
+      <thead class="bg-light border-top border-bottom">
+         <th class="mr-5 pl-5 py-2">ジャンル</th>
+         <th colspan="1" class="colspan ml-5"></th>
+       </thead>
+      <% @genres.each do |genre| %>
+       <tbody class="border-bottom">
+
+         <td class="pr-5 py-3"><%= genre.name %></td>
+         <td><%= link_to "編集する", edit_admin_genre_path(genre) , class:"btn btn-success " %></td></br>
+         <% end %>
+       </tbody>
+       </table>
+       </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>
