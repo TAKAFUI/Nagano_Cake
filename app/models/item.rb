@@ -6,11 +6,11 @@ class Item < ApplicationRecord
 
   belongs_to :genre
 
-  #active=販売中、stop=販売停止中
-  enum is_active: {
-    active: 1,
-    stop: 2
-  }
+  # #active=販売中、stop=販売停止中
+  # enum is_active: {
+  #   active: 1,
+  #   stop: 2
+  # }
 
   def get_image(width,height)
      unless image.attached?

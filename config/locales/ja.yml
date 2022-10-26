@@ -4,6 +4,7 @@ ja:
       payment_method:
         credit_card: "クレジットカード"
         transfer: "銀行振込"
+
       status:
         wait: "入金待ち"
         confirmation: "入金確認"
@@ -17,3 +18,8 @@ ja:
           wait: "製作待ち"
           processing: "製作中"
           complete: "製作完了"
+
+    # item:
+    #   is_active:
+    #       active: "販売中"
+    #       stop: "販売停止中"

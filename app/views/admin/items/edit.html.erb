@@ -19,11 +19,11 @@
             <td><%= f.text_field :price,class:" col-10 mb-3 ml-4" %>円</td></tr>
             <tr>
             <th>販売ステータス</th>
-            <td class="pl-4"><%= f.radio_button :is_active, "販売中" %>
-      <%= f.label :is_active, "販売中",class:"mr-3" %>
-      <%= f.radio_button :is_active, "販売停止中" %>
-      <%= f.label :is_active, "販売停止中" %></td></tr>
-        <tr><th></th>
+            <td class="pl-4"><%= f.radio_button :is_active, true %>
+              <%= f.label :is_active, "販売中",class:"mr-3" %>
+              <%= f.radio_button :is_active, false %>
+              <%= f.label :is_active, "販売停止中" %></td></tr>
+                <tr><th></th>
             <td><%= f.submit "変更を保存",class:"btn btn-success ml-5 px-4 mt-3" %></td></tr>
     </table>
 
